@@ -1,0 +1,37 @@
+name: Network Automation CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  validate-and-generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install pyyaml jinja2
+
+      - name: Validate YAML
+        run: |
+          python -c "import yaml; yaml.safe_load(open('inventory/device.yaml'))"
+
+      - name: Generate Junos configs
+        run: |
+          cd scripts
+          python generate_config.py
+
+      - name: Show generated configs
+        run: |
+          ls -l configs
