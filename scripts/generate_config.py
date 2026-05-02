@@ -1,12 +1,15 @@
 import yaml
-from jinja2 import Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 # Load YAML data
 with open('../inventory/device.yaml') as f:
     data = yaml.safe_load(f)
 
 # Load template
-env = Environment(loader=FileSystemLoader('../templates'))
+env = Environment(
+    loader=FileSystemLoader('../templates'),
+    undefined=StrictUndefined
+)
 template = env.get_template('interface.j2')
 
 # Generate configs
