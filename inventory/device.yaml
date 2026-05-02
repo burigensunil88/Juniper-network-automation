@@ -10,3 +10,8 @@ devices:
     description: Uplink-FW
     ip: 10.1.1.5
     prefix: 30
+  - hostname: ex-switch-3
+    interface: ge-0/0/3
+    description: Uplink-ISP
+    ip: 10.1.1.9
+    prefix: 30
