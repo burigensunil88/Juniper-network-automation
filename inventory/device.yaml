@@ -1,0 +1,12 @@
+devices:
+  - hostname: ex-switch-1
+    interface: ge-0/0/1
+    description: Uplink-Core
+    ip: 10.1.1.1
+    prefix: 30
+
+  - hostname: ex-switch-2
+    interface: ge-0/0/2
+    description: Uplink-FW
+    ip: 10.1.1.5
+    prefix: 30
