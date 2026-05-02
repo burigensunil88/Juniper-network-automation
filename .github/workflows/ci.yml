@@ -35,3 +35,9 @@ jobs:
       - name: Show generated configs
         run: |
           ls -l configs
+          
+      - name: Upload generated configs
+        uses: actions/upload-artifact@v4
+        with:
+          name: junos-configs
+          path: configs/
