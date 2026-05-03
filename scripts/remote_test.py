@@ -1,15 +1,16 @@
+import os
 from jnpr.junos import Device
 
 dev = Device(
-    host='66.129.235.201',
-    user='jcluser',
-    passwd='Juniper!1',
-    port=31001
+    host=os.environ["JUNOS_HOST"],
+    user=os.environ["JUNOS_USER"],
+    passwd=os.environ["JUNOS_PASSWORD"],
+    port=int(os.environ["JUNOS_PORT"])
 )
 
 dev.open()
 
-print(dev.facts['hostname'])
-print(dev.facts['version'])
+print(dev.facts["hostname"])
+print(dev.facts["version"])
 
 dev.close()
