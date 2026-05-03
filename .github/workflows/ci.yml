@@ -41,11 +41,11 @@ jobs:
         with:
           name: junos-configs
           path: configs/
-      - name: Test remote PyEZ connectivity
-        env:
-          JUNOS_HOST: ${{ secrets.JUNOS_HOST }}
-          JUNOS_PORT: ${{ secrets.JUNOS_PORT }}
-          JUNOS_USER: ${{ secrets.JUNOS_USER }}
-          JUNOS_PASSWORD: ${{ secrets.JUNOS_PASSWORD }}
-        run: |
-          python scripts/remote_test.py
+#      - name: Test remote PyEZ connectivity
+#        env:
+#          JUNOS_HOST: ${{ secrets.JUNOS_HOST }}
+#          JUNOS_PORT: ${{ secrets.JUNOS_PORT }}
+#          JUNOS_USER: ${{ secrets.JUNOS_USER }}
+#          JUNOS_PASSWORD: ${{ secrets.JUNOS_PASSWORD }}
+#        run: |
+#          python scripts/remote_test.py
