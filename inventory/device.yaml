@@ -20,3 +20,8 @@ devices:
     description: Uplink-Server
     ip: 10.1.1.13
     prefix: 30
+  - hostname: ex-switch-5
+    interface: ge-0/0/5
+    description: Uplink-Test
+    ip: 10.1.1.17
+    prefix: 30
