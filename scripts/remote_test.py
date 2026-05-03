@@ -12,5 +12,6 @@ dev.open()
 
 print(dev.facts["hostname"])
 print(dev.facts["version"])
+print("Remote NETCONF connectivity successful")
 
 dev.close()
